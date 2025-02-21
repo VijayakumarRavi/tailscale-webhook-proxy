@@ -1,9 +1,9 @@
+---
 # See https://github.com/cloudflare/wrangler-action for more details on how to use this action.
 name: Deploy Worker
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   repository_dispatch:
 jobs:
   deploy:
@@ -21,6 +21,6 @@ jobs:
             PUSHOVER_USER_KEY
             TAILSCALE_WEBHOOK_SECRET
         env:
-            PUSHOVER_API_TOKEN: ${{ secrets.PUSHOVER_API_TOKEN }}
-            PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
-            TAILSCALE_WEBHOOK_SECRET: ${{ secrets.TAILSCALE_WEBHOOK_SECRET }}
+          PUSHOVER_API_TOKEN: ${{ secrets.PUSHOVER_API_TOKEN }}
+          PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+          TAILSCALE_WEBHOOK_SECRET: ${{ secrets.TAILSCALE_WEBHOOK_SECRET }}
